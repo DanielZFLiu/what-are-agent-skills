@@ -24,7 +24,7 @@
 				</div>
 			{/each}
 			<div class="row more">
-				<span class="font-mono">and 20+ more...</span>
+				<span class="font-mono">and many more...</span>
 			</div>
 		</div>
 	</div>

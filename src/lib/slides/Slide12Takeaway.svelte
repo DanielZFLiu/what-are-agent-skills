@@ -1,7 +1,7 @@
 <div class="slide">
 	<blockquote class="font-display">
-		A skill is just a markdown file.<br />
-		Start with one that solves your most repeated prompt.
+		A skill is just a folder with a SKILL.md.<br />
+		Write what you know. Let your agent use it.
 	</blockquote>
 	<p class="questions font-body">Questions?</p>
 	<p class="exit font-mono"><span class="dollar">$</span> exit</p>

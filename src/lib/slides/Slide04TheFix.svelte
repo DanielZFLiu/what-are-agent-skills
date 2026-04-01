@@ -29,7 +29,6 @@
 
 	<p class="note font-body">
 		Originally developed by Anthropic, now an open standard adopted across the industry.
-		<span class="font-mono link">agentskills.io</span>
 	</p>
 </div>
 
@@ -63,10 +62,5 @@
 		color: var(--text-muted);
 		margin-top: 24px;
 		font-weight: 300;
-	}
-
-	.link {
-		color: var(--cyan);
-		font-size: 0.9em;
 	}
 </style>

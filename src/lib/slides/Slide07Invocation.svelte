@@ -7,39 +7,27 @@
 	<h2 class="font-heading">How it works: progressive disclosure</h2>
 
 	<div class="tiers">
-		<div class="tier">
+		<div class="tier tier-cyan">
 			<div class="tier-label font-mono" style="color: var(--cyan)">Tier 1 — Discovery</div>
 			<div class="tier-body font-body">
 				At startup, agent loads only <strong>name + description</strong> of all skills.
 			</div>
 			<div class="tier-cost font-mono">~50–100 tokens per skill</div>
 		</div>
-		<div class="tier active">
+		<div class="tier tier-pink">
 			<div class="tier-label font-mono" style="color: var(--pink)">Tier 2 — Activation</div>
 			<div class="tier-body font-body">
 				When a task matches, agent loads the <strong>full SKILL.md body</strong>.
 			</div>
 			<div class="tier-cost font-mono">&lt;5000 tokens recommended</div>
 		</div>
-		<div class="tier">
+		<div class="tier tier-yellow">
 			<div class="tier-label font-mono" style="color: var(--yellow)">Tier 3 — Resources</div>
 			<div class="tier-body font-body">
 				Agent loads <strong>scripts, references, assets</strong> only when instructions reference them.
 			</div>
 			<div class="tier-cost font-mono">varies</div>
 		</div>
-	</div>
-
-	<div class="flow font-mono">
-		<span style="color: var(--cyan)">/commit</span>
-		<span class="arrow">→</span>
-		<span>match description</span>
-		<span class="arrow">→</span>
-		<span style="color: var(--pink)">load SKILL.md</span>
-		<span class="arrow">→</span>
-		<span>follow instructions</span>
-		<span class="arrow">→</span>
-		<span style="color: var(--green)">done</span>
 	</div>
 
 	<p class="insight font-body">
@@ -78,9 +66,16 @@
 		gap: 16px;
 	}
 
-	.tier.active {
-		border-color: var(--pink);
-		box-shadow: 0 0 20px rgba(255, 97, 136, 0.08);
+	.tier-cyan {
+		border-left: 3px solid var(--cyan);
+	}
+
+	.tier-pink {
+		border-left: 3px solid var(--pink);
+	}
+
+	.tier-yellow {
+		border-left: 3px solid var(--yellow);
 	}
 
 	.tier-label {
@@ -106,21 +101,6 @@
 		font-size: clamp(9px, 0.9vw, 11px);
 		color: var(--text-dim);
 		white-space: nowrap;
-	}
-
-	.flow {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		font-size: clamp(10px, 1vw, 12px);
-		color: var(--text-muted);
-		justify-content: center;
-		margin-bottom: 16px;
-		flex-wrap: wrap;
-	}
-
-	.arrow {
-		color: var(--text-dim);
 	}
 
 	.insight {

@@ -59,14 +59,18 @@
 		</div>
 
 		<CodeBlock filename="SKILL.md">
-			<div class="code-line"><span class="ln">1</span><span class="key">---</span></div>
+			<div class="code-line">
+				<span class="ln">1</span><span class="key">---</span><span class="inline-ann"
+					>← frontmatter start</span
+				>
+			</div>
 			<div class="code-line">
 				<span class="ln">2</span><span class="prop">name</span><span class="key">:</span>
 				<span class="str">commit</span>
 			</div>
 			<div class="code-line">
 				<span class="ln">3</span><span class="prop">description</span><span class="key">:</span>
-				<span class="str">></span>
+				<span class="str">></span><span class="inline-ann">← triggers activation</span>
 			</div>
 			<div class="code-line">
 				<span class="ln">4</span>
@@ -80,10 +84,16 @@
 				<span class="ln">6</span>
 				<span class="str"> staged changes.</span>
 			</div>
-			<div class="code-line"><span class="ln">7</span><span class="key">---</span></div>
+			<div class="code-line">
+				<span class="ln">7</span><span class="key">---</span><span class="inline-ann"
+					>← frontmatter end</span
+				>
+			</div>
 			<div class="code-line"><span class="ln">8</span></div>
 			<div class="code-line">
-				<span class="ln">9</span><span class="heading">## Instructions</span>
+				<span class="ln">9</span><span class="heading">## Instructions</span><span
+					class="inline-ann">← body starts here</span
+				>
 			</div>
 			<div class="code-line">
 				<span class="ln">10</span><span class="body">Review staged changes and write</span>
@@ -99,21 +109,6 @@
 				<span class="ln">14</span><span class="body">- Run tests before committing</span>
 			</div>
 		</CodeBlock>
-	</div>
-
-	<div class="annotations">
-		<span class="ann-item">
-			<span class="arrow" style="color: var(--pink)">↑</span> frontmatter — YAML metadata (name + description
-			required)
-		</span>
-		<span class="ann-item">
-			<span class="arrow" style="color: var(--green)">↑</span> description — how the AI decides when to
-			activate
-		</span>
-		<span class="ann-item">
-			<span class="arrow" style="color: var(--yellow)">↑</span> body — markdown instructions (keep under
-			500 lines)
-		</span>
 	</div>
 </div>
 
@@ -247,21 +242,13 @@
 		color: var(--text-muted);
 	}
 
-	/* ── Annotations ─────────────────────────────────────────── */
+	/* ── Inline annotations ──────────────────────────────────── */
 
-	.annotations {
-		display: flex;
-		gap: 20px;
-		margin-top: 14px;
-	}
-
-	.ann-item {
-		font-family: 'JetBrains Mono', monospace;
-		font-size: clamp(9px, 0.9vw, 11px);
+	.inline-ann {
 		color: var(--text-dim);
-	}
-
-	.arrow {
-		font-size: 14px;
+		font-size: 0.85em;
+		font-style: italic;
+		margin-left: 16px;
+		opacity: 0.7;
 	}
 </style>
