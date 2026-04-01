@@ -9,6 +9,7 @@ import Slide07Invocation from './slides/Slide07Invocation.svelte';
 import Slide08WriteYourOwn from './slides/Slide08WriteYourOwn.svelte';
 import Slide09WhereToPutIt from './slides/Slide09WhereToPutIt.svelte';
 import Slide10Adoption from './slides/Slide10Adoption.svelte';
+import Slide11LiveDemo from './slides/Slide11LiveDemo.svelte';
 import Slide12Takeaway from './slides/Slide12Takeaway.svelte';
 
 export interface SlideEntry {
@@ -27,5 +28,6 @@ export const slides: SlideEntry[] = [
 	{ component: Slide08WriteYourOwn, title: 'Write Your Own' },
 	{ component: Slide09WhereToPutIt, title: 'Where to Put It' },
 	{ component: Slide10Adoption, title: 'One Standard, Many Tools' },
+	{ component: Slide11LiveDemo, title: 'Live Demo' },
 	{ component: Slide12Takeaway, title: 'Takeaway' },
 ];
