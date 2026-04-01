@@ -1,0 +1,97 @@
+:root {
+	--bg: #0d0d0d;
+	--surface: #161616;
+	--surface-2: #1e1e1e;
+	--border: #2a2a2a;
+	--text: #f8f8f2;
+	--text-muted: #939293;
+	--text-dim: #5a5a5a;
+	--pink: #ff6188;
+	--green: #a9dc76;
+	--yellow: #ffd866;
+	--cyan: #78dce8;
+	--purple: #ab9df2;
+	--orange: #fc9867;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+	background: var(--bg);
+	color: var(--text);
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Scanline overlay */
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background: repeating-linear-gradient(
+		0deg,
+		transparent,
+		transparent 2px,
+		rgba(255, 255, 255, 0.008) 2px,
+		rgba(255, 255, 255, 0.008) 4px
+	);
+	pointer-events: none;
+	z-index: 1000;
+}
+
+/* Typography classes */
+.font-display {
+	font-family: 'Syne', sans-serif;
+	font-weight: 800;
+}
+
+.font-heading {
+	font-family: 'Syne', sans-serif;
+	font-weight: 700;
+}
+
+.font-mono {
+	font-family: 'JetBrains Mono', monospace;
+}
+
+.font-body {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: 300;
+}
+
+/* Blinking cursor */
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+.cursor {
+	display: inline-block;
+	width: 0.6em;
+	height: 1.1em;
+	background: var(--pink);
+	animation: blink 1s step-end infinite;
+	vertical-align: bottom;
+	margin-left: 4px;
+}
+
+/* Stagger animation for children */
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
