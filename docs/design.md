@@ -19,9 +19,9 @@ The presentation follows a problem → solution → how → try-it-yourself arc:
 1. Hook with a relatable developer frustration (repeating yourself to AI)
 2. Introduce skills as the fix
 3. Show it working (screen recording)
-4. Explain the mechanics (anatomy, invocation)
+4. Explain the mechanics (anatomy, invocation with progressive disclosure)
 5. Teach how to write one (walkthrough + recording)
-6. Brief tool comparison
+6. Portability — one open standard, 30+ tools
 7. Live demo + close
 
 ---
@@ -71,10 +71,10 @@ Full design system documented in `docs/terminal-noir.md`. Summary:
 - Section tag: `// 03 — the fix`
 - Heading: "Skills = reusable, shareable instructions"
 - Three concept cards in a row:
-  - **Card 1 (pink border):** "A Markdown File" — plain text instructions, not code
-  - **Card 2 (green border):** "A Trigger" — invoked via `/name` or automatically by the AI
-  - **Card 3 (yellow border):** "Portable" — commit to repo, share with team, works across 30+ tools
-- Small note about agentskills.io open standard
+  - **Card 1 (pink border):** "A Folder" — a directory with a `SKILL.md` file, plus optional scripts and references
+  - **Card 2 (green border):** "A Trigger" — invoked via `/name` or automatically when the AI matches the skill's description
+  - **Card 3 (yellow border):** "An Open Standard" — one format across 30+ tools (agentskills.io). Write once, use in Copilot, Windsurf, Claude Code, Cursor, Codex, and more.
+- Prominent note: "Originally developed by Anthropic, now an open standard adopted across the industry."
 
 ### Slide 5: See It In Action
 
@@ -89,12 +89,21 @@ Full design system documented in `docs/terminal-noir.md`. Summary:
 
 - Section tag: `// 05 — anatomy`
 - Heading: "Anatomy of a Skill"
-- Code block styled as an editor window (three dots, filename):
+- Two-part layout: directory tree on left, file content on right
+- Left side — directory tree:
+  ```
+  commit/
+  ├── SKILL.md        ← the skill
+  ├── scripts/        ← optional
+  └── references/     ← optional
+  ```
+- Right side — code block styled as an editor window (three dots, filename `SKILL.md`):
   ```yaml
   ---
   name: commit
-  description: Smart conventional commits
-  argument-hint: "[message]"
+  description: >
+    Smart conventional commits. Use when
+    the user wants to commit staged changes.
   ---
 
   ## Instructions
@@ -103,30 +112,31 @@ Full design system documented in `docs/terminal-noir.md`. Summary:
   Run the test suite before committing.
   ```
 - Three color-coded annotations below the code block:
-  - Pink arrow: "frontmatter — metadata about the skill"
-  - Green arrow: "name + description — how the AI finds and invokes it"
-  - Yellow arrow: "prompt body — the actual instructions"
+  - Pink arrow: "frontmatter — YAML metadata (name + description are required)"
+  - Green arrow: "description — how the AI decides when to activate this skill"
+  - Yellow arrow: "body — markdown instructions the AI follows"
+- Note (dim): "Only `name` and `description` are required. Optional fields: `license`, `compatibility`, `metadata`, `allowed-tools`."
 
-### Slide 7: How Invocation Works
+### Slide 7: How Invocation Works — Progressive Disclosure
 
 - Section tag: `// 06 — invocation`
-- Heading: "How it works"
-- Horizontal flow diagram with four nodes and arrows:
-  - **User** (cyan label) — "types `/commit`"
-  - → **Agent** (pink label, active/glowing border) — "loads skill"
-  - → **Skill** (green label) — "reads instructions"
-  - → **Action** (yellow label) — "executes task"
-- Secondary note below (dim text): "Some tools can also auto-invoke skills based on conversation context."
+- Heading: "How it works: progressive disclosure"
+- Three-tier visual showing what gets loaded and when:
+  - **Tier 1 — Discovery** (cyan): At startup, agent loads only `name` + `description` of all skills. Cost: ~50-100 tokens per skill.
+  - **Tier 2 — Activation** (pink, highlighted): When a task matches, agent loads the full `SKILL.md` body. Cost: <5000 tokens recommended.
+  - **Tier 3 — Resources** (yellow): Agent loads scripts, references, assets only when the instructions reference them. Cost: varies.
+- Below the tiers, a compact horizontal flow: User types `/commit` → Agent matches description → Full SKILL.md loaded → Agent follows instructions → Task executed
+- Key insight (dim text): "The agent knows about all installed skills but only pays the token cost for the ones it actually uses."
 
 ### Slide 8: Writing Your Own
 
 - Section tag: `// 07 — write your own`
 - Heading: "Writing your own skill"
 - Vertical step progression (numbered, with connecting lines):
-  1. "Create the file" — in the right location for your tool
-  2. "Add frontmatter" — name, description, optional config
-  3. "Write the prompt" — markdown instructions for the AI
-  4. "Invoke it" — type `/your-skill` and watch it work
+  1. "Create the folder" — `mkdir .agents/skills/my-skill/` (the cross-client standard path)
+  2. "Write SKILL.md" — add `name` and `description` in YAML frontmatter, then markdown instructions
+  3. "Add resources (optional)" — bundle scripts in `scripts/`, reference docs in `references/`
+  4. "Invoke it" — type `/my-skill` and watch it work
 - Embedded screen recording showing the process
 - Implementation note: steps appear with staggered animation, recording is separate content
 
@@ -134,31 +144,27 @@ Full design system documented in `docs/terminal-noir.md`. Summary:
 
 - Section tag: `// 08 — file locations`
 - Heading: "Where does the file go?"
-- Table styled as a terminal output:
+- Primary path shown prominently (terminal-style):
+  ```
+  your-project/.agents/skills/my-skill/SKILL.md
+  ```
+  Caption: "The `.agents/skills/` directory is the cross-client standard. Every compatible tool scans it."
+- Two scope rows below:
+  - **Project scope:** `.agents/skills/` in your repo root — shared with the team via git
+  - **Personal scope:** `~/.agents/skills/` in your home directory — available across all your projects
+- Small note (dim): "Each tool also has its own native path (e.g., `.claude/skills/`, `.github/prompts/`), but `.agents/skills/` works everywhere."
 
-  | Tool | File Location |
-  |------|---------------|
-  | Copilot | `.github/prompts/name.prompt.md` |
-  | Windsurf | `.windsurf/workflows/name.md` |
-  | Claude Code | `.claude/skills/name/SKILL.md` |
+### Slide 10: One Standard, Many Tools
 
-- Note below: "All three support personal (global) and project (repo) scopes."
-
-### Slide 10: Across Tools
-
-- Section tag: `// 09 — comparison`
-- Heading: "How the tools compare"
-- Comparison table:
-
-  | | Copilot | Windsurf | Claude Code |
-  |---|---|---|---|
-  | Feature name | Prompt Files | Workflows | Skills |
-  | Format | `.prompt.md` | `.md` | `SKILL.md` in directory |
-  | Frontmatter | description, agent, model, tools | none | name, description, allowed-tools, model, effort, agent, + more |
-  | Auto-invoke? | No | No | Yes (description match) |
-  | Bundled files? | No | No | Yes (scripts, templates) |
-
-- Observation (dim text): "The core concept is the same: a markdown file with instructions, invoked via `/name`."
+- Section tag: `// 09 — adoption`
+- Heading: "One format. 30+ tools."
+- Central visual: the `SKILL.md` file icon/graphic with arrows radiating out to a grid of tool logos/names:
+  - Row 1: GitHub Copilot, VS Code, Claude Code, Cursor
+  - Row 2: OpenAI Codex, Gemini CLI, Windsurf, Junie (JetBrains)
+  - Row 3: Kiro (AWS), Databricks, Goose (Block), Roo Code
+  - Additional row (dim/smaller): "and 20+ more..."
+- Key message (below): "Write a skill once. It works in every tool your team uses — today and tomorrow."
+- Small attribution (dim): "Open standard at agentskills.io. Originally developed by Anthropic."
 
 ### Slide 11: Live Demo
 
