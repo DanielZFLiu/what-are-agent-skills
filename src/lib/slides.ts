@@ -7,6 +7,8 @@ import Slide05InAction from './slides/Slide05InAction.svelte';
 import Slide06Anatomy from './slides/Slide06Anatomy.svelte';
 import Slide07Invocation from './slides/Slide07Invocation.svelte';
 import Slide08WriteYourOwn from './slides/Slide08WriteYourOwn.svelte';
+import Slide09WhereToPutIt from './slides/Slide09WhereToPutIt.svelte';
+import Slide10Adoption from './slides/Slide10Adoption.svelte';
 import Slide12Takeaway from './slides/Slide12Takeaway.svelte';
 
 export interface SlideEntry {
@@ -23,5 +25,7 @@ export const slides: SlideEntry[] = [
 	{ component: Slide06Anatomy, title: 'Anatomy' },
 	{ component: Slide07Invocation, title: 'Progressive Disclosure' },
 	{ component: Slide08WriteYourOwn, title: 'Write Your Own' },
+	{ component: Slide09WhereToPutIt, title: 'Where to Put It' },
+	{ component: Slide10Adoption, title: 'One Standard, Many Tools' },
 	{ component: Slide12Takeaway, title: 'Takeaway' },
 ];
