@@ -14,9 +14,11 @@
 			<p class="caption">"Who you are and how you work."</p>
 		</ConceptCard>
 		<ConceptCard title="On-demand Skills" borderColor="var(--pink)">
-			<p>Specific tasks invoked when needed via <code class="font-mono">/name</code>.</p>
-			<p class="examples">SKILL.md files in .agents/skills/</p>
-			<p class="caption">"What to do when asked."</p>
+			<p>
+				Loaded when needed — via <code class="font-mono">/name</code> or automatically when the task matches.
+			</p>
+			<p class="examples">SKILL.md files in your tool's skills directory</p>
+			<p class="caption">"What to do when needed."</p>
 		</ConceptCard>
 	</div>
 
