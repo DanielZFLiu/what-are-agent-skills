@@ -2,8 +2,6 @@
 
 A slide-deck presentation about agent skills — the open standard for extending AI coding assistants with reusable, shareable instructions. Learn more about the standard at [agentskills.io](https://agentskills.io).
 
-Built as a SvelteKit app with a custom "Terminal Noir" design system (Monokai-inspired dark theme).
-
 ---
 
 ## Running locally
