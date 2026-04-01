@@ -1,2 +1,5 @@
-<h1>Agent Skills Presentation</h1>
-<p>Scaffolding works.</p>
+<script>
+	import Presentation from '$lib/Presentation.svelte';
+</script>
+
+<Presentation />
