@@ -4,25 +4,28 @@
 	type Tool = 'claude' | 'copilot' | 'windsurf';
 	let activeTool: Tool = $state('claude');
 
-	const paths: Record<Tool, { label: string; project: string; personal: string }> = {
-		claude: {
+	const tools: { id: Tool; label: string; project: string; personal: string }[] = [
+		{
+			id: 'claude',
 			label: 'Claude Code',
-			project: '.claude/skills/<name>/SKILL.md',
+			project: '<repo>/.claude/skills/<name>/SKILL.md',
 			personal: '~/.claude/skills/<name>/SKILL.md',
 		},
-		copilot: {
-			label: 'Copilot / VS Code',
-			project: '.github/skills/<name>/SKILL.md',
-			personal: '~/.agents/skills/<name>/SKILL.md',
+		{
+			id: 'copilot',
+			label: 'Copilot',
+			project: '<repo>/.github/skills/<name>/SKILL.md',
+			personal: '~/.github/skills/<name>/SKILL.md',
 		},
-		windsurf: {
+		{
+			id: 'windsurf',
 			label: 'Windsurf',
-			project: '.windsurf/skills/<name>/SKILL.md',
+			project: '<repo>/.windsurf/skills/<name>/SKILL.md',
 			personal: '~/.codeium/windsurf/skills/<name>/SKILL.md',
 		},
-	};
+	];
 
-	const tools: Tool[] = ['claude', 'copilot', 'windsurf'];
+	let current = $derived(tools.find((t) => t.id === activeTool)!);
 </script>
 
 <div class="slide">
@@ -33,40 +36,34 @@
 		{#each tools as tool}
 			<button
 				class="tab font-mono"
-				class:active={activeTool === tool}
-				onclick={() => (activeTool = tool)}
+				class:active={activeTool === tool.id}
+				onclick={() => (activeTool = tool.id)}
 			>
-				{paths[tool].label}
+				{tool.label}
 			</button>
 		{/each}
 	</div>
 
 	<div class="paths">
-		<div class="path-row">
-			<span class="scope-label font-mono" style="color: var(--green)">Project</span>
-			<code class="path font-mono">{paths[activeTool].project}</code>
+		<div class="path-group">
+			<span class="scope-label font-mono" style="color: var(--green)">Project scope</span>
+			<p class="scope-hint font-body">Shared with your team via git</p>
+			<div class="path-box">
+				<code class="font-mono">{current.project}</code>
+			</div>
 		</div>
-		<div class="path-row">
-			<span class="scope-label font-mono" style="color: var(--purple)">Personal</span>
-			<code class="path font-mono">{paths[activeTool].personal}</code>
-		</div>
-	</div>
 
-	<div class="cross-client">
-		<p class="cross-client-label font-mono">Cross-client standard (works everywhere)</p>
-		<div class="path-row">
-			<span class="scope-label font-mono" style="color: var(--cyan)">Project</span>
-			<code class="path font-mono standard">.agents/skills/&lt;name&gt;/SKILL.md</code>
-		</div>
-		<div class="path-row">
-			<span class="scope-label font-mono" style="color: var(--cyan)">Personal</span>
-			<code class="path font-mono standard">~/.agents/skills/&lt;name&gt;/SKILL.md</code>
+		<div class="path-group">
+			<span class="scope-label font-mono" style="color: var(--purple)">Personal scope</span>
+			<p class="scope-hint font-body">Available across all your projects</p>
+			<div class="path-box">
+				<code class="font-mono">{current.personal}</code>
+			</div>
 		</div>
 	</div>
 
 	<p class="note font-mono">
-		All three tools scan <span style="color: var(--cyan)">.agents/skills/</span> in addition to their
-		native paths.
+		Same SKILL.md format across all tools — only the directory path differs.
 	</p>
 </div>
 
@@ -88,14 +85,14 @@
 	.tool-tabs {
 		display: flex;
 		gap: 6px;
-		margin-bottom: 20px;
+		margin-bottom: 24px;
 	}
 
 	.tab {
 		background: var(--surface);
 		border: 1px solid var(--border);
 		color: var(--text-dim);
-		padding: 8px 18px;
+		padding: 8px 20px;
 		border-radius: 4px;
 		cursor: pointer;
 		font-size: clamp(10px, 1.1vw, 13px);
@@ -115,62 +112,48 @@
 		background: var(--surface-2);
 	}
 
-	/* ── Path rows ───────────────────────────────────────────── */
+	/* ── Path groups ─────────────────────────────────────────── */
 
 	.paths {
 		display: flex;
-		flex-direction: column;
-		gap: 8px;
-		margin-bottom: 20px;
+		gap: 16px;
+		margin-bottom: 24px;
 	}
 
-	.path-row {
+	.path-group {
+		flex: 1;
 		background: var(--surface);
 		border: 1px solid var(--border);
 		border-radius: 6px;
-		padding: 10px 16px;
-		display: flex;
-		align-items: center;
-		gap: 16px;
+		padding: 16px 20px;
 	}
 
 	.scope-label {
 		font-size: clamp(10px, 1vw, 12px);
 		font-weight: 600;
-		white-space: nowrap;
-		min-width: 70px;
 	}
 
-	.path {
-		font-size: clamp(11px, 1.2vw, 14px);
-		color: var(--text-muted);
-		background: none;
-		padding: 0;
-	}
-
-	.path.standard {
-		color: var(--cyan);
-	}
-
-	/* ── Cross-client section ────────────────────────────────── */
-
-	.cross-client {
-		margin-bottom: 16px;
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
-	}
-
-	.cross-client-label {
-		font-size: clamp(8px, 0.85vw, 10px);
+	.scope-hint {
+		font-size: clamp(10px, 0.9vw, 12px);
 		color: var(--text-dim);
-		letter-spacing: 2px;
-		text-transform: uppercase;
+		margin-top: 4px;
+		margin-bottom: 12px;
 	}
 
-	.cross-client .path-row {
-		border-color: rgba(120, 220, 232, 0.2);
+	.path-box {
+		background: var(--bg);
+		border: 1px solid var(--border);
+		border-radius: 4px;
+		padding: 10px 14px;
 	}
+
+	.path-box code {
+		font-size: clamp(10px, 1vw, 12px);
+		color: var(--text-muted);
+		word-break: break-all;
+	}
+
+	/* ── Footer note ─────────────────────────────────────────── */
 
 	.note {
 		font-size: clamp(9px, 0.9vw, 11px);
