@@ -7,25 +7,34 @@
 	<h2 class="font-heading">Where does the file go?</h2>
 
 	<div class="primary-path font-mono">
-		your-project/<span class="highlight">.agents/skills/</span>my-skill/<span class="highlight">SKILL.md</span>
+		your-project/<span class="highlight">.agents/skills/</span>my-skill/<span class="highlight"
+			>SKILL.md</span
+		>
 	</div>
 	<p class="primary-caption font-body">
-		The <code class="font-mono">.agents/skills/</code> directory is the cross-client standard. Every compatible tool scans it.
+		The <code class="font-mono">.agents/skills/</code> directory is the cross-client standard. Every compatible
+		tool scans it.
 	</p>
 
 	<div class="scopes">
 		<div class="scope">
 			<span class="scope-label font-mono" style="color: var(--green)">Project scope</span>
-			<span class="scope-desc font-body"><code class="font-mono">.agents/skills/</code> in your repo root — shared with the team via git</span>
+			<span class="scope-desc font-body"
+				><code class="font-mono">.agents/skills/</code> in your repo root — shared with the team via git</span
+			>
 		</div>
 		<div class="scope">
 			<span class="scope-label font-mono" style="color: var(--purple)">Personal scope</span>
-			<span class="scope-desc font-body"><code class="font-mono">~/.agents/skills/</code> in your home directory — available across all your projects</span>
+			<span class="scope-desc font-body"
+				><code class="font-mono">~/.agents/skills/</code> in your home directory — available across all
+				your projects</span
+			>
 		</div>
 	</div>
 
 	<p class="note font-mono">
-		Each tool also has its own native path (e.g., .claude/skills/, .github/prompts/), but .agents/skills/ works everywhere.
+		Each tool also has its own native path (e.g., .claude/skills/, .github/prompts/), but
+		.agents/skills/ works everywhere.
 	</p>
 </div>
 

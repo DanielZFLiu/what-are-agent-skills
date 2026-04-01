@@ -29,7 +29,7 @@
 		}
 	}
 
-	$effect(() => {
+	function syncFromHash() {
 		const hash = window.location.hash;
 		if (hash) {
 			const num = parseInt(hash.slice(1), 10);
@@ -37,13 +37,28 @@
 				current = num - 1;
 			}
 		}
+	}
 
+	// Read initial hash and listen for browser back/forward navigation
+	$effect(() => {
+		syncFromHash();
+		window.addEventListener('hashchange', syncFromHash);
+		return () => window.removeEventListener('hashchange', syncFromHash);
+	});
+
+	// Keyboard navigation — separate from hash handling
+	$effect(() => {
 		window.addEventListener('keydown', handleKeydown);
 		return () => window.removeEventListener('keydown', handleKeydown);
 	});
 </script>
 
-<div class="presentation">
+<div
+	class="presentation"
+	role="region"
+	aria-label="Slide presentation"
+	aria-roledescription="presentation"
+>
 	{#each slides as slide, i}
 		<div class="slide-wrapper" class:active={i === current}>
 			{#if i === current}

@@ -1,5 +1,10 @@
 <script lang="ts">
-	let { current = 0, total = 0, onprev, onnext }: {
+	let {
+		current = 0,
+		total = 0,
+		onprev,
+		onnext,
+	}: {
 		current: number;
 		total: number;
 		onprev: () => void;
@@ -8,7 +13,7 @@
 </script>
 
 <div class="shell">
-	<div class="slide-counter font-mono">
+	<div class="slide-counter font-mono" aria-live="polite" aria-atomic="true">
 		{current + 1} / {total}
 	</div>
 
@@ -66,7 +71,9 @@
 		border-radius: 4px;
 		cursor: pointer;
 		font-size: 14px;
-		transition: border-color 0.2s, color 0.2s;
+		transition:
+			border-color 0.2s,
+			color 0.2s;
 	}
 
 	.nav-btn:hover:not(:disabled) {

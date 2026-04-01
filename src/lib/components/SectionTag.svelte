@@ -1,12 +1,16 @@
 <script lang="ts">
-	let { number, label, color = 'var(--cyan)' }: {
+	let {
+		number,
+		label,
+		color = 'var(--cyan)',
+	}: {
 		number: string;
 		label: string;
 		color?: string;
 	} = $props();
 </script>
 
-<p class="section-tag font-mono" style:color={color}>
+<p class="section-tag font-mono" style:color>
 	// {number} — {label}
 </p>
 

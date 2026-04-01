@@ -9,12 +9,7 @@
 
 	<div class="layout">
 		<div class="steps">
-			{#each [
-				{ num: '1', cmd: 'mkdir .agents/skills/my-skill/', label: 'Create the folder' },
-				{ num: '2', cmd: 'Write SKILL.md', label: 'Add name, description, and instructions' },
-				{ num: '3', cmd: 'scripts/ references/', label: 'Bundle resources (optional)' },
-				{ num: '4', cmd: '/my-skill', label: 'Invoke it and watch it work' },
-			] as step}
+			{#each [{ num: '1', cmd: 'mkdir .agents/skills/my-skill/', label: 'Create the folder' }, { num: '2', cmd: 'Write SKILL.md', label: 'Add name, description, and instructions' }, { num: '3', cmd: 'scripts/ references/', label: 'Bundle resources (optional)' }, { num: '4', cmd: '/my-skill', label: 'Invoke it and watch it work' }] as step}
 				<div class="step">
 					<div class="step-num font-mono">{step.num}</div>
 					<div class="step-content">
@@ -26,7 +21,7 @@
 		</div>
 
 		<div class="video-side">
-			<VideoPlayer src="" visible={true} />
+			<VideoPlayer src="" />
 			<p class="hint font-mono">Screen recording of creating a skill</p>
 		</div>
 	</div>

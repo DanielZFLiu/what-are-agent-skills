@@ -9,13 +9,21 @@
 
 	<div class="cards">
 		<ConceptCard title="A Folder" borderColor="var(--pink)">
-			<p>A directory with a <code class="font-mono">SKILL.md</code> file, plus optional scripts and references.</p>
+			<p>
+				A directory with a <code class="font-mono">SKILL.md</code> file, plus optional scripts and references.
+			</p>
 		</ConceptCard>
 		<ConceptCard title="A Trigger" borderColor="var(--green)">
-			<p>Invoked via <code class="font-mono">/name</code> or automatically when the AI matches the skill's description.</p>
+			<p>
+				Invoked via <code class="font-mono">/name</code> or automatically when the AI matches the skill's
+				description.
+			</p>
 		</ConceptCard>
 		<ConceptCard title="An Open Standard" borderColor="var(--yellow)">
-			<p>One format across 30+ tools. Write once, use in Copilot, Windsurf, Claude Code, Cursor, Codex, and more.</p>
+			<p>
+				One format across 30+ tools. Write once, use in Copilot, Windsurf, Claude Code, Cursor,
+				Codex, and more.
+			</p>
 		</ConceptCard>
 	</div>
 

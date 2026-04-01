@@ -43,7 +43,8 @@
 	</div>
 
 	<p class="insight font-body">
-		The agent knows about all installed skills but only pays the token cost for the ones it actually uses.
+		The agent knows about all installed skills but only pays the token cost for the ones it actually
+		uses.
 	</p>
 </div>
 

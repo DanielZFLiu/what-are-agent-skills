@@ -17,7 +17,9 @@
 		</div>
 		<div class="block">
 			<span class="prompt font-mono"><span class="dollar">$</span></span>
-			<span class="text font-mono">"Follow our REST naming convention: plural nouns, kebab-case..."</span>
+			<span class="text font-mono"
+				>"Follow our REST naming convention: plural nouns, kebab-case..."</span
+			>
 		</div>
 	</div>
 

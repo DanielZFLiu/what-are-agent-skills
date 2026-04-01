@@ -1,5 +1,11 @@
 <script lang="ts">
-	let { src, poster = '', visible = false }: {
+	// visible defaults to true — slides are conditionally rendered,
+	// so this component only exists when its slide is active
+	let {
+		src,
+		poster = '',
+		visible = true,
+	}: {
 		src: string;
 		poster?: string;
 		visible?: boolean;
@@ -19,14 +25,7 @@
 </script>
 
 <div class="video-container">
-	<video
-		bind:this={videoEl}
-		{src}
-		{poster}
-		muted
-		playsinline
-		controls
-	>
+	<video bind:this={videoEl} {src} {poster} muted playsinline controls>
 		<track kind="captions" />
 	</video>
 	{#if !src}

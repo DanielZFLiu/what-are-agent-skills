@@ -7,7 +7,7 @@
 	<SectionTag number="04" label="in action" color="var(--green)" />
 	<h2 class="font-heading">See it working</h2>
 
-	<VideoPlayer src="" visible={true} />
+	<VideoPlayer src="" />
 
 	<p class="caption font-mono">
 		User invokes <span class="cmd">/commit</span> → AI loads skill → reads instructions → executes task

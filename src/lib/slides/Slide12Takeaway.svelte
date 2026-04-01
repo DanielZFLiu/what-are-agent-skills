@@ -1,5 +1,5 @@
 <div class="slide">
-	<blockquote class="font-heading">
+	<blockquote class="font-display">
 		A skill is just a markdown file.<br />
 		Start with one that solves your most repeated prompt.
 	</blockquote>

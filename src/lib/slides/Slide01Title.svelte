@@ -1,7 +1,9 @@
 <div class="slide">
 	<div class="glow"></div>
 	<p class="prompt font-mono"><span class="dollar">$</span> present --topic agent-skills</p>
-	<h1 class="font-display">What Are<br /><span class="accent">Agent Skills?</span><span class="cursor"></span></h1>
+	<h1 class="font-display">
+		What Are<br /><span class="accent">Agent Skills?</span><span class="cursor"></span>
+	</h1>
 	<p class="subtitle font-body">Teaching your AI assistant new tricks</p>
 </div>
 

@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	let { title, borderColor = 'var(--pink)', children }: {
+	let {
+		title,
+		borderColor = 'var(--pink)',
+		children,
+	}: {
 		title: string;
 		borderColor?: string;
 		children: Snippet;
