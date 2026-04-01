@@ -9,7 +9,7 @@
 
 	<div class="layout">
 		<div class="steps">
-			{#each [{ num: '1', cmd: 'mkdir my-skill/', label: "Create a folder in your tool's skills directory" }, { num: '2', cmd: 'Write SKILL.md', label: 'Add name, description, and instructions' }, { num: '3', cmd: 'scripts/ references/', label: 'Bundle resources (optional)' }, { num: '4', cmd: '/my-skill', label: 'Invoke it and watch it work' }] as step}
+			{#each [{ num: '1', cmd: 'mkdir my-skill/', label: "Create a folder in your tool's skills directory" }, { num: '2', cmd: 'Write SKILL.md', label: 'Add name, description, and instructions' }, { num: '3', cmd: 'scripts/ references/ assets/', label: 'Bundle resources (optional)' }, { num: '4', cmd: '/my-skill', label: 'Invoke it and watch it work' }] as step}
 				<div class="step">
 					<div class="step-num font-mono">{step.num}</div>
 					<div class="step-content">

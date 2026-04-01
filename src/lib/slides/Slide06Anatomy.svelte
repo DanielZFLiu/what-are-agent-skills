@@ -70,7 +70,7 @@
 			</div>
 			<div class="code-line">
 				<span class="ln">3</span><span class="prop">description</span><span class="key">:</span>
-				<span class="str">></span><span class="inline-ann">← triggers activation</span>
+				<span class="str">></span><span class="inline-ann">← when to use this skill</span>
 			</div>
 			<div class="code-line">
 				<span class="ln">4</span>
