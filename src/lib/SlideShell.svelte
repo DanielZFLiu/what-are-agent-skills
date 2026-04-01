@@ -1,3 +1,6 @@
+<!--
+	Bottom chrome — slide counter and prev/next navigation arrows.
+-->
 <script lang="ts">
 	let {
 		current = 0,

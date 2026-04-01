@@ -1,3 +1,6 @@
+/**
+ * Ordered slide registry — each entry maps a component to its title.
+ */
 import type { Component } from 'svelte';
 import Slide01Title from './slides/Slide01Title.svelte';
 import Slide02Problem from './slides/Slide02Problem.svelte';

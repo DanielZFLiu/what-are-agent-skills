@@ -1,6 +1,11 @@
+<!--
+	Slide presentation engine — keyboard/click navigation, URL hash sync, fade transitions.
+-->
 <script lang="ts">
 	import { slides } from './slides.js';
 	import SlideShell from './SlideShell.svelte';
+
+	// ── State ───────────────────────────────────────────────────────────────────
 
 	let current = $state(0);
 
@@ -19,6 +24,8 @@
 		goto(current + 1);
 	}
 
+	// ── Keyboard Navigation ────────────────────────────────────────────────────
+
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
 			e.preventDefault();
@@ -28,6 +35,8 @@
 			prev();
 		}
 	}
+
+	// ── Hash Sync ───────────────────────────────────────────────────────────────
 
 	function syncFromHash() {
 		const hash = window.location.hash;

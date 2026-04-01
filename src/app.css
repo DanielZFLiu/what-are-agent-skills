@@ -1,3 +1,5 @@
+/* ── Color Tokens ────────────────────────────────────────────────────────── */
+
 :root {
 	--bg: #0d0d0d;
 	--surface: #161616;
@@ -13,6 +15,8 @@
 	--purple: #ab9df2;
 	--orange: #fc9867;
 }
+
+/* ── Reset & Base ────────────────────────────────────────────────────────── */
 
 *,
 *::before,
@@ -31,7 +35,7 @@ body {
 	font-family: 'IBM Plex Sans', sans-serif;
 }
 
-/* Scanline overlay */
+/* ── Atmosphere ──────────────────────────────────────────────────────────── */
 body::after {
 	content: '';
 	position: fixed;
@@ -47,7 +51,7 @@ body::after {
 	z-index: 1000;
 }
 
-/* Typography classes */
+/* ── Typography ──────────────────────────────────────────────────────────── */
 .font-display {
 	font-family: 'Syne', sans-serif;
 	font-weight: 800;
@@ -67,7 +71,7 @@ body::after {
 	font-weight: 300;
 }
 
-/* Blinking cursor */
+/* ── Animations ──────────────────────────────────────────────────────────── */
 @keyframes blink {
 	50% {
 		opacity: 0;
@@ -84,7 +88,6 @@ body::after {
 	margin-left: 4px;
 }
 
-/* Stagger animation for children */
 @keyframes fade-up {
 	from {
 		opacity: 0;
