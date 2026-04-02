@@ -14,20 +14,20 @@ Effective skills are grounded in real expertise.
 
 Complete a real task in conversation with an agent, providing context, corrections, and preferences along the way. Then extract the reusable pattern into a skill. Pay attention to:
 
-* **Steps that worked** — the sequence of actions that led to success
-* **Corrections you made** — places where you steered the agent's approach
-* **Input/output formats** — what the data looked like going in and coming out
-* **Context you provided** — project-specific facts, conventions, or constraints the agent didn't already know
+- **Steps that worked** — the sequence of actions that led to success
+- **Corrections you made** — places where you steered the agent's approach
+- **Input/output formats** — what the data looked like going in and coming out
+- **Context you provided** — project-specific facts, conventions, or constraints the agent didn't already know
 
 ### Synthesize from existing project artifacts
 
 When you have a body of existing knowledge, you can feed it into an LLM and ask it to synthesize a skill. Good source material includes:
 
-* Internal documentation, runbooks, and style guides
-* API specifications, schemas, and configuration files
-* Code review comments and issue trackers
-* Version control history, especially patches and fixes
-* Real-world failure cases and their resolutions
+- Internal documentation, runbooks, and style guides
+- API specifications, schemas, and configuration files
+- Code review comments and issue trackers
+- Version control history, especially patches and fixes
+- Real-world failure cases and their resolutions
 
 ## Refine with real execution
 
@@ -47,11 +47,15 @@ Focus on what the agent wouldn't know without your skill: project-specific conve
 
 ```markdown
 <!-- Too verbose — the agent already knows what PDFs are -->
+
 ## Extract PDF text
+
 PDF (Portable Document Format) files are a common file format...
 
 <!-- Better — jumps straight to what the agent wouldn't know -->
+
 ## Extract PDF text
+
 Use pdfplumber for text extraction. For scanned documents, fall back to
 pdf2image with pytesseract.
 ```
@@ -66,7 +70,7 @@ Concise, stepwise guidance with a working example tends to outperform exhaustive
 
 ### Structure large skills with progressive disclosure
 
-Keep `SKILL.md` under 500 lines and 5,000 tokens — just the core instructions. Move detailed reference material to separate files in `references/`. Tell the agent *when* to load each file: "Read `references/api-errors.md` if the API returns a non-200 status code."
+Keep `SKILL.md` under 500 lines and 5,000 tokens — just the core instructions. Move detailed reference material to separate files in `references/`. Tell the agent _when_ to load each file: "Read `references/api-errors.md` if the API returns a non-200 status code."
 
 ## Calibrating control
 
@@ -76,6 +80,7 @@ Keep `SKILL.md` under 500 lines and 5,000 tokens — just the core instructions.
 
 ```markdown
 ## Code review process
+
 1. Check all database queries for SQL injection (use parameterized queries)
 2. Verify authentication checks on every endpoint
 3. Look for race conditions in concurrent code paths
@@ -86,6 +91,7 @@ Keep `SKILL.md` under 500 lines and 5,000 tokens — just the core instructions.
 
 ````markdown
 ## Database migration
+
 Run exactly this sequence:
 
 ```bash
@@ -101,7 +107,7 @@ Pick a default and mention alternatives briefly rather than presenting them as e
 
 ### Favor procedures over declarations
 
-A skill should teach the agent *how to approach* a class of problems, not *what to produce* for a specific instance.
+A skill should teach the agent _how to approach_ a class of problems, not _what to produce_ for a specific instance.
 
 ## Patterns for effective instructions
 
@@ -111,6 +117,7 @@ The highest-value content in many skills is a list of gotchas — environment-sp
 
 ```markdown
 ## Gotchas
+
 - The `users` table uses soft deletes. Queries must include
   `WHERE deleted_at IS NULL` or results will include deactivated accounts.
 - The user ID is `user_id` in the database, `uid` in the auth service,
@@ -128,7 +135,9 @@ When you need specific output format, provide a template. Short templates can li
 
 ```markdown
 ## Form processing workflow
+
 Progress:
+
 - [ ] Step 1: Analyze the form (run `scripts/analyze_form.py`)
 - [ ] Step 2: Create field mapping (edit `fields.json`)
 - [ ] Step 3: Validate mapping (run `scripts/validate_fields.py`)
@@ -142,6 +151,7 @@ Instruct the agent to validate its own work before moving on:
 
 ```markdown
 ## Editing workflow
+
 1. Make your edits
 2. Run validation: `python scripts/validate.py output/`
 3. If validation fails:

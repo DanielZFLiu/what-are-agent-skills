@@ -11,27 +11,30 @@ Skills can instruct agents to run shell commands and bundle reusable scripts in 
 When an existing package already does what you need, you can reference it directly in your `SKILL.md` instructions without a `scripts/` directory. Many ecosystems provide tools that auto-resolve dependencies at runtime:
 
 **uvx (Python):**
+
 ```bash
 uvx ruff@0.8.0 check .
 uvx black@24.10.0 .
 ```
 
 **npx (Node.js):**
+
 ```bash
 npx eslint@9 --fix .
 npx create-vite@6 my-app
 ```
 
 **go run (Go):**
+
 ```bash
 go run golang.org/x/tools/cmd/goimports@v0.28.0 .
 ```
 
 **Tips for one-off commands:**
 
-* **Pin versions** so the command behaves the same over time.
-* **State prerequisites** in your `SKILL.md`. For runtime-level requirements, use the `compatibility` frontmatter field.
-* **Move complex commands into scripts** when they grow complex enough to be error-prone.
+- **Pin versions** so the command behaves the same over time.
+- **State prerequisites** in your `SKILL.md`. For runtime-level requirements, use the `compatibility` frontmatter field.
+- **Move complex commands into scripts** when they grow complex enough to be error-prone.
 
 ## Referencing scripts from `SKILL.md`
 
@@ -39,6 +42,7 @@ Use **relative paths from the skill directory root** to reference bundled files:
 
 ```markdown
 ## Available scripts
+
 - **`scripts/validate.sh`** — Validates configuration files
 - **`scripts/process.py`** — Processes input data
 ```
@@ -47,7 +51,9 @@ Then instruct the agent to run them:
 
 ````markdown
 ## Workflow
+
 1. Run the validation script:
+
    ```bash
    bash scripts/validate.sh "$INPUT_FILE"
    ```
@@ -84,11 +90,11 @@ Run with: `uv run scripts/extract.py`
 ```typescript
 #!/usr/bin/env -S deno run
 
-import * as cheerio from "npm:cheerio@1.0.0";
+import * as cheerio from 'npm:cheerio@1.0.0';
 
 const html = `<html><body><h1>Welcome</h1><p class="info">This is a test.</p></body></html>`;
 const $ = cheerio.load(html);
-console.log($("p.info").text());
+console.log($('p.info').text());
 ```
 
 Run with: `deno run scripts/extract.ts`
@@ -129,9 +135,9 @@ Prefer JSON, CSV, TSV over free-form text. Separate data (stdout) from diagnosti
 
 ### Further considerations
 
-* **Idempotency.** "Create if not exists" is safer than "create and fail on duplicate."
-* **Input constraints.** Reject ambiguous input with a clear error.
-* **Dry-run support.** For destructive operations, a `--dry-run` flag lets the agent preview.
-* **Meaningful exit codes.** Use distinct codes for different failure types.
-* **Safe defaults.** Consider requiring explicit confirmation flags for destructive operations.
-* **Predictable output size.** Default to summaries or reasonable limits. Support `--offset` for pagination.
+- **Idempotency.** "Create if not exists" is safer than "create and fail on duplicate."
+- **Input constraints.** Reject ambiguous input with a clear error.
+- **Dry-run support.** For destructive operations, a `--dry-run` flag lets the agent preview.
+- **Meaningful exit codes.** Use distinct codes for different failure types.
+- **Safe defaults.** Consider requiring explicit confirmation flags for destructive operations.
+- **Predictable output size.** Default to summaries or reasonable limits. Support `--offset` for pagination.

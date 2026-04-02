@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SectionTag from '$lib/components/SectionTag.svelte';
 	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
 </script>
@@ -7,10 +7,11 @@
 	<SectionTag number="04" label="in action" color="var(--green)" />
 	<h2 class="font-heading">See it working</h2>
 
-	<VideoPlayer src="" />
+	<VideoPlayer src="/recordings/skill-showcase.mp4" />
 
 	<p class="caption font-mono">
-		User invokes <span class="cmd">/commit</span> → AI loads skill → reads instructions → executes task
+		User invokes <span class="cmd">/canvas-design</span> → AI loads skill → reads instructions → executes
+		task
 	</p>
 </div>
 

@@ -39,31 +39,34 @@ description: Extract PDF text, fill forms, merge files. Use when handling PDFs.
 # PDF Processing
 
 ## When to use this skill
+
 Use this skill when the user needs to work with PDF files...
 
 ## How to extract text
+
 1. Use pdfplumber for text extraction...
 
 ## How to fill forms
+
 ...
 ```
 
 The following frontmatter is required at the top of `SKILL.md`:
 
-* `name`: A short identifier
-* `description`: When to use this skill
+- `name`: A short identifier
+- `description`: When to use this skill
 
 The Markdown body contains the actual instructions and has no specific restrictions on structure or content.
 
 This simple format has some key advantages:
 
-* **Self-documenting**: A skill author or user can read a `SKILL.md` and understand what it does, making skills easy to audit and improve.
+- **Self-documenting**: A skill author or user can read a `SKILL.md` and understand what it does, making skills easy to audit and improve.
 
-* **Extensible**: Skills can range in complexity from just text instructions to executable code, assets, and templates.
+- **Extensible**: Skills can range in complexity from just text instructions to executable code, assets, and templates.
 
-* **Portable**: Skills are just files, so they're easy to edit, version, and share.
+- **Portable**: Skills are just files, so they're easy to edit, version, and share.
 
 ## Next steps
 
-* [View the specification](specification.md) to understand the full format.
-* [See example skills](https://github.com/anthropics/skills) on GitHub.
+- [View the specification](specification.md) to understand the full format.
+- [See example skills](https://github.com/anthropics/skills) on GitHub.

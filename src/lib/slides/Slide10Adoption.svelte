@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SectionTag from '$lib/components/SectionTag.svelte';
 
 	const tools = [

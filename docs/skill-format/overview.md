@@ -18,10 +18,10 @@ Agents are increasingly capable, but often don't have the context they need to d
 
 ## What can Agent Skills enable?
 
-* **Domain expertise**: Package specialized knowledge into reusable instructions, from legal review processes to data analysis pipelines.
-* **New capabilities**: Give agents new capabilities (e.g. creating presentations, building MCP servers, analyzing datasets).
-* **Repeatable workflows**: Turn multi-step tasks into consistent and auditable workflows.
-* **Interoperability**: Reuse the same skill across different skills-compatible agent products.
+- **Domain expertise**: Package specialized knowledge into reusable instructions, from legal review processes to data analysis pipelines.
+- **New capabilities**: Give agents new capabilities (e.g. creating presentations, building MCP servers, analyzing datasets).
+- **Repeatable workflows**: Turn multi-step tasks into consistent and auditable workflows.
+- **Interoperability**: Reuse the same skill across different skills-compatible agent products.
 
 ## Adoption
 

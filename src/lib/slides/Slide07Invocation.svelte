@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SectionTag from '$lib/components/SectionTag.svelte';
 </script>
 
@@ -48,6 +48,8 @@
 		color: var(--text);
 		margin-bottom: 24px;
 	}
+
+	/* ── Tier cards ──────────────────────────────────────────── */
 
 	.tiers {
 		display: flex;
@@ -102,6 +104,8 @@
 		color: var(--text-dim);
 		white-space: nowrap;
 	}
+
+	/* ── Footer ──────────────────────────────────────────────── */
 
 	.insight {
 		font-size: clamp(12px, 1.2vw, 14px);

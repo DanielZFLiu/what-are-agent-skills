@@ -25,7 +25,7 @@
 		},
 	];
 
-	let current = $derived(tools.find((t) => t.id === activeTool)!);
+	let activePaths = $derived(tools.find((t) => t.id === activeTool)!);
 </script>
 
 <div class="slide">
@@ -49,7 +49,7 @@
 			<span class="scope-label font-mono" style="color: var(--green)">Project scope</span>
 			<p class="scope-hint font-body">Shared with your team via git</p>
 			<div class="path-box">
-				<code class="font-mono">{current.project}</code>
+				<code class="font-mono">{activePaths.project}</code>
 			</div>
 		</div>
 
@@ -57,7 +57,7 @@
 			<span class="scope-label font-mono" style="color: var(--purple)">Personal scope</span>
 			<p class="scope-hint font-body">Available across all your projects</p>
 			<div class="path-box">
-				<code class="font-mono">{current.personal}</code>
+				<code class="font-mono">{activePaths.personal}</code>
 			</div>
 		</div>
 	</div>

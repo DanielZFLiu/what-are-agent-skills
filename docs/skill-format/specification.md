@@ -50,7 +50,7 @@ description: Extract PDF text, fill forms, merge files. Use when handling PDFs.
 license: Apache-2.0
 metadata:
   author: example-org
-  version: "1.0"
+  version: '1.0'
 ---
 ```
 
@@ -58,11 +58,11 @@ metadata:
 
 The required `name` field:
 
-* Must be 1-64 characters
-* May only contain unicode lowercase alphanumeric characters (`a-z`) and hyphens (`-`)
-* Must not start or end with a hyphen (`-`)
-* Must not contain consecutive hyphens (`--`)
-* Must match the parent directory name
+- Must be 1-64 characters
+- May only contain unicode lowercase alphanumeric characters (`a-z`) and hyphens (`-`)
+- Must not start or end with a hyphen (`-`)
+- Must not contain consecutive hyphens (`--`)
+- Must match the parent directory name
 
 **Valid examples:**
 
@@ -84,9 +84,9 @@ name: pdf--processing # consecutive hyphens not allowed
 
 The required `description` field:
 
-* Must be 1-1024 characters
-* Should describe both what the skill does and when to use it
-* Should include specific keywords that help agents identify relevant tasks
+- Must be 1-1024 characters
+- Should describe both what the skill does and when to use it
+- Should include specific keywords that help agents identify relevant tasks
 
 **Good example:**
 
@@ -104,8 +104,8 @@ description: Helps with PDFs.
 
 The optional `license` field:
 
-* Specifies the license applied to the skill
-* Recommended to keep it short (either the name of a license or the name of a bundled license file)
+- Specifies the license applied to the skill
+- Recommended to keep it short (either the name of a license or the name of a bundled license file)
 
 **Example:**
 
@@ -117,9 +117,9 @@ license: Proprietary. LICENSE.txt has complete terms
 
 The optional `compatibility` field:
 
-* Must be 1-500 characters if provided
-* Should only be included if your skill has specific environment requirements
-* Can indicate intended product, required system packages, network access needs, etc.
+- Must be 1-500 characters if provided
+- Should only be included if your skill has specific environment requirements
+- Can indicate intended product, required system packages, network access needs, etc.
 
 **Examples:**
 
@@ -135,24 +135,24 @@ Most skills do not need the `compatibility` field.
 
 The optional `metadata` field:
 
-* A map from string keys to string values
-* Clients can use this to store additional properties not defined by the Agent Skills spec
-* Recommended to make key names reasonably unique to avoid accidental conflicts
+- A map from string keys to string values
+- Clients can use this to store additional properties not defined by the Agent Skills spec
+- Recommended to make key names reasonably unique to avoid accidental conflicts
 
 **Example:**
 
 ```yaml
 metadata:
   author: example-org
-  version: "1.0"
+  version: '1.0'
 ```
 
 ### `allowed-tools` field
 
 The optional `allowed-tools` field:
 
-* A space-delimited list of tools that are pre-approved to run
-* Experimental. Support for this field may vary between agent implementations
+- A space-delimited list of tools that are pre-approved to run
+- Experimental. Support for this field may vary between agent implementations
 
 **Example:**
 
@@ -166,9 +166,9 @@ The Markdown body after the frontmatter contains the skill instructions. There a
 
 Recommended sections:
 
-* Step-by-step instructions
-* Examples of inputs and outputs
-* Common edge cases
+- Step-by-step instructions
+- Examples of inputs and outputs
+- Common edge cases
 
 Note that the agent will load this entire file once it's decided to activate a skill. Consider splitting longer `SKILL.md` content into referenced files.
 
@@ -178,9 +178,9 @@ Note that the agent will load this entire file once it's decided to activate a s
 
 Contains executable code that agents can run. Scripts should:
 
-* Be self-contained or clearly document dependencies
-* Include helpful error messages
-* Handle edge cases gracefully
+- Be self-contained or clearly document dependencies
+- Include helpful error messages
+- Handle edge cases gracefully
 
 Supported languages depend on the agent implementation. Common options include Python, Bash, and JavaScript.
 
@@ -188,9 +188,9 @@ Supported languages depend on the agent implementation. Common options include P
 
 Contains additional documentation that agents can read when needed:
 
-* `REFERENCE.md` - Detailed technical reference
-* `FORMS.md` - Form templates or structured data formats
-* Domain-specific files (`finance.md`, `legal.md`, etc.)
+- `REFERENCE.md` - Detailed technical reference
+- `FORMS.md` - Form templates or structured data formats
+- Domain-specific files (`finance.md`, `legal.md`, etc.)
 
 Keep individual reference files focused. Agents load these on demand, so smaller files mean less use of context.
 
@@ -198,9 +198,9 @@ Keep individual reference files focused. Agents load these on demand, so smaller
 
 Contains static resources:
 
-* Templates (document templates, configuration templates)
-* Images (diagrams, examples)
-* Data files (lookup tables, schemas)
+- Templates (document templates, configuration templates)
+- Images (diagrams, examples)
+- Data files (lookup tables, schemas)
 
 ## Progressive disclosure
 

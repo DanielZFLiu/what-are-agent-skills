@@ -8,11 +8,11 @@ A guide for adding Agent Skills support to an AI agent or development tool.
 
 Every skills-compatible agent follows the same three-tier loading strategy:
 
-| Tier            | What's loaded               | When                        | Token cost                  |
-| --------------- | --------------------------- | --------------------------- | --------------------------- |
-| 1. Catalog      | Name + description          | Session start               | ~50-100 tokens per skill    |
-| 2. Instructions | Full `SKILL.md` body        | When the skill is activated | <5000 tokens (recommended)  |
-| 3. Resources    | Scripts, references, assets | When instructions reference them | Varies                 |
+| Tier            | What's loaded               | When                             | Token cost                 |
+| --------------- | --------------------------- | -------------------------------- | -------------------------- |
+| 1. Catalog      | Name + description          | Session start                    | ~50-100 tokens per skill   |
+| 2. Instructions | Full `SKILL.md` body        | When the skill is activated      | <5000 tokens (recommended) |
+| 3. Resources    | Scripts, references, assets | When instructions reference them | Varies                     |
 
 ## Step 1: Discover skills
 
@@ -59,9 +59,9 @@ Consider gating project-level skill loading on a trust check to prevent untruste
 
 ### Lenient validation
 
-* Name doesn't match directory → warn, load anyway
-* Description missing or empty → skip the skill, log error
-* YAML unparseable → skip the skill, log error
+- Name doesn't match directory → warn, load anyway
+- Description missing or empty → skip the skill, log error
+- YAML unparseable → skip the skill, log error
 
 ### What to store
 

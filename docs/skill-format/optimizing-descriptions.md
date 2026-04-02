@@ -14,10 +14,10 @@ Important nuance: agents typically only consult skills for tasks that require kn
 
 ## Writing effective descriptions
 
-* **Use imperative phrasing.** "Use this skill when..." rather than "This skill does..."
-* **Focus on user intent, not implementation.**
-* **Err on the side of being pushy.** Explicitly list contexts where the skill applies.
-* **Keep it concise.** A few sentences to a short paragraph. Hard limit of 1024 characters.
+- **Use imperative phrasing.** "Use this skill when..." rather than "This skill does..."
+- **Focus on user intent, not implementation.**
+- **Err on the side of being pushy.** Explicitly list contexts where the skill applies.
+- **Keep it concise.** A few sentences to a short paragraph. Hard limit of 1024 characters.
 
 ## Designing trigger eval queries
 
@@ -25,8 +25,11 @@ Test with ~20 queries: 8-10 that should trigger and 8-10 that shouldn't.
 
 ```json
 [
-  { "query": "I've got a spreadsheet with revenue in col C and expenses in col D — can you add a profit margin column?", "should_trigger": true },
-  { "query": "whats the quickest way to convert this json file to yaml", "should_trigger": false }
+	{
+		"query": "I've got a spreadsheet with revenue in col C and expenses in col D — can you add a profit margin column?",
+		"should_trigger": true
+	},
+	{ "query": "whats the quickest way to convert this json file to yaml", "should_trigger": false }
 ]
 ```
 
@@ -45,8 +48,9 @@ Run each query through your agent and observe whether the skill is invoked. Run 
 ## Avoiding overfitting
 
 Split your query set:
-* **Train set (~60%)**: queries you use to guide improvements
-* **Validation set (~40%)**: queries you set aside to check generalization
+
+- **Train set (~60%)**: queries you use to guide improvements
+- **Validation set (~40%)**: queries you set aside to check generalization
 
 ## The optimization loop
 

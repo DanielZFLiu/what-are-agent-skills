@@ -12,11 +12,11 @@ Atmosphere comes from restraint: subtle scanline textures, radial glows for dept
 
 Three fonts, each with a distinct role:
 
-| Role | Font | Weight | Usage |
-|------|------|--------|-------|
-| Display / Headings | **Syne** | 700–800 | Slide titles, section headings. Bold, geometric, slightly unconventional. |
-| Code / Terminal | **JetBrains Mono** | 400–600 | Code blocks, terminal prompts, labels, annotations, section tags. |
-| Body | **IBM Plex Sans** | 300–500 | Descriptive text, subtitles, card descriptions. Clean with a technical heritage. |
+| Role               | Font               | Weight  | Usage                                                                            |
+| ------------------ | ------------------ | ------- | -------------------------------------------------------------------------------- |
+| Display / Headings | **Syne**           | 700–800 | Slide titles, section headings. Bold, geometric, slightly unconventional.        |
+| Code / Terminal    | **JetBrains Mono** | 400–600 | Code blocks, terminal prompts, labels, annotations, section tags.                |
+| Body               | **IBM Plex Sans**  | 300–500 | Descriptive text, subtitles, card descriptions. Clean with a technical heritage. |
 
 ### Google Fonts import
 
@@ -41,31 +41,31 @@ IBM+Plex+Sans:wght@300;400;500;600
 
 ### Backgrounds & Surfaces
 
-| Name | Hex | Usage |
-|------|-----|-------|
-| bg | `#0d0d0d` | Slide background, page background |
-| surface | `#161616` | Cards, code blocks, elevated elements |
-| surface-2 | `#1e1e1e` | Code block headers, nested surfaces |
-| border | `#2a2a2a` | All borders, dividers |
+| Name      | Hex       | Usage                                 |
+| --------- | --------- | ------------------------------------- |
+| bg        | `#0d0d0d` | Slide background, page background     |
+| surface   | `#161616` | Cards, code blocks, elevated elements |
+| surface-2 | `#1e1e1e` | Code block headers, nested surfaces   |
+| border    | `#2a2a2a` | All borders, dividers                 |
 
 ### Text
 
-| Name | Hex | Usage |
-|------|-----|-------|
-| text | `#f8f8f2` | Primary text (warm white) |
-| text-muted | `#939293` | Secondary text, descriptions |
-| text-dim | `#5a5a5a` | Line numbers, annotations, labels |
+| Name       | Hex       | Usage                             |
+| ---------- | --------- | --------------------------------- |
+| text       | `#f8f8f2` | Primary text (warm white)         |
+| text-muted | `#939293` | Secondary text, descriptions      |
+| text-dim   | `#5a5a5a` | Line numbers, annotations, labels |
 
 ### Accents
 
-| Name | Hex | Syntax Role | Semantic Role |
-|------|-----|-------------|---------------|
-| pink | `#ff6188` | Keywords, operators | Primary accent, emphasis, active states |
-| green | `#a9dc76` | Functions, strings | Success, terminal prompts, positive |
-| yellow | `#ffd866` | Strings, values | Highlights, warnings, attention |
-| cyan | `#78dce8` | Types, properties | Information, links, secondary accent |
-| purple | `#ab9df2` | Keywords, constants | Tertiary accent, special elements |
-| orange | `#fc9867` | Numbers, parameters | Section tags, warm accent |
+| Name   | Hex       | Syntax Role         | Semantic Role                           |
+| ------ | --------- | ------------------- | --------------------------------------- |
+| pink   | `#ff6188` | Keywords, operators | Primary accent, emphasis, active states |
+| green  | `#a9dc76` | Functions, strings  | Success, terminal prompts, positive     |
+| yellow | `#ffd866` | Strings, values     | Highlights, warnings, attention         |
+| cyan   | `#78dce8` | Types, properties   | Information, links, secondary accent    |
+| purple | `#ab9df2` | Keywords, constants | Tertiary accent, special elements       |
+| orange | `#fc9867` | Numbers, parameters | Section tags, warm accent               |
 
 ### Usage rules
 
@@ -80,19 +80,19 @@ IBM+Plex+Sans:wght@300;400;500;600
 
 ```css
 :root {
-  --bg: #0d0d0d;
-  --surface: #161616;
-  --surface-2: #1e1e1e;
-  --border: #2a2a2a;
-  --text: #f8f8f2;
-  --text-muted: #939293;
-  --text-dim: #5a5a5a;
-  --pink: #ff6188;
-  --green: #a9dc76;
-  --yellow: #ffd866;
-  --cyan: #78dce8;
-  --purple: #ab9df2;
-  --orange: #fc9867;
+	--bg: #0d0d0d;
+	--surface: #161616;
+	--surface-2: #1e1e1e;
+	--border: #2a2a2a;
+	--text: #f8f8f2;
+	--text-muted: #939293;
+	--text-dim: #5a5a5a;
+	--pink: #ff6188;
+	--green: #a9dc76;
+	--yellow: #ffd866;
+	--cyan: #78dce8;
+	--purple: #ab9df2;
+	--orange: #fc9867;
 }
 ```
 
@@ -106,18 +106,18 @@ A full-page overlay that gives a subtle CRT monitor feel. Always present, never 
 
 ```css
 body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(255,255,255,0.008) 2px,
-    rgba(255,255,255,0.008) 4px
-  );
-  pointer-events: none;
-  z-index: 1000;
+	content: '';
+	position: fixed;
+	inset: 0;
+	background: repeating-linear-gradient(
+		0deg,
+		transparent,
+		transparent 2px,
+		rgba(255, 255, 255, 0.008) 2px,
+		rgba(255, 255, 255, 0.008) 4px
+	);
+	pointer-events: none;
+	z-index: 1000;
 }
 ```
 
@@ -127,12 +127,12 @@ Used on the title slide and key moments for depth. Pink glow, very subtle:
 
 ```css
 .element::before {
-  content: '';
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255,97,136,0.06) 0%, transparent 70%);
-  pointer-events: none;
+	content: '';
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background: radial-gradient(circle, rgba(255, 97, 136, 0.06) 0%, transparent 70%);
+	pointer-events: none;
 }
 ```
 
@@ -142,14 +142,16 @@ Used on the title slide and anywhere that benefits from a sense of "liveness":
 
 ```css
 @keyframes blink {
-  50% { opacity: 0; }
+	50% {
+		opacity: 0;
+	}
 }
 .cursor {
-  display: inline-block;
-  width: 14px;
-  height: 28px;
-  background: var(--pink);
-  animation: blink 1s step-end infinite;
+	display: inline-block;
+	width: 14px;
+	height: 28px;
+	background: var(--pink);
+	animation: blink 1s step-end infinite;
 }
 ```
 
@@ -173,6 +175,7 @@ $ present --topic agent-skills       (title slide)
 ### Code blocks
 
 Styled as editor windows with:
+
 - Window chrome (three dots) in the header
 - Filename in dim text
 - Line numbers in `text-dim`
@@ -182,6 +185,7 @@ Styled as editor windows with:
 ### Concept cards
 
 Row of 2–4 cards with:
+
 - Colored left border (2px, using accent colors)
 - Dark surface background
 - Monospace title (JetBrains Mono, 11px, weight 600)
@@ -190,6 +194,7 @@ Row of 2–4 cards with:
 ### Flow diagrams
 
 Horizontal flow with:
+
 - Nodes as bordered boxes on surface background
 - Arrow characters (`→`) in dim text between nodes
 - Active/highlighted node gets a pink border + subtle box-shadow glow

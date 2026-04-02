@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SectionTag from '$lib/components/SectionTag.svelte';
 	import CodeBlock from '$lib/components/CodeBlock.svelte';
 </script>
@@ -8,7 +8,7 @@
 	<h2 class="font-heading">Anatomy of a Skill</h2>
 
 	<div class="layout">
-		<div class="left">
+		<div class="sidebar">
 			<div class="tree font-mono">
 				<div class="tree-line"><span class="dir">commit/</span></div>
 				<div class="tree-line">
@@ -131,7 +131,7 @@
 		align-items: flex-start;
 	}
 
-	.left {
+	.sidebar {
 		flex-shrink: 0;
 		display: flex;
 		flex-direction: column;

@@ -34,6 +34,7 @@ Rules: each line of the message should be lowercase, no period, short, scope wit
 ```
 
 ## Mottos to Live By
+
 - Think in long term, don't be shortsighted.
 - Organization and clean code saves the day.
 - Plan before acting - always.

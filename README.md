@@ -1,6 +1,6 @@
 # What Are Agent Skills?
 
-A slide-deck presentation about agent skills — the open standard for extending AI coding assistants with reusable, shareable instructions. Learn more about the standard at [agentskills.io](https://agentskills.io).
+A slide-deck presentation about agent skills: the open standard for extending AI coding assistants with reusable, shareable instructions. Learn more about the standard at [agentskills.io](https://agentskills.io).
 
 ---
 
@@ -47,12 +47,12 @@ When `src` is empty the component renders a placeholder — the recording slot i
 
 ## Navigation
 
-| Action | Effect |
-| --- | --- |
-| `ArrowRight` / `ArrowDown` | Next slide |
-| `ArrowLeft` / `ArrowUp` | Previous slide |
-| Click the on-screen arrows | Next / previous slide |
-| URL hash (e.g. `#3`) | Jump directly to a slide |
+| Action                     | Effect                   |
+| -------------------------- | ------------------------ |
+| `ArrowRight` / `ArrowDown` | Next slide               |
+| `ArrowLeft` / `ArrowUp`    | Previous slide           |
+| Click the on-screen arrows | Next / previous slide    |
+| URL hash (e.g. `#3`)       | Jump directly to a slide |
 
 The URL hash stays in sync with the current slide, so links to specific slides and browser back/forward navigation both work.
 
@@ -60,35 +60,11 @@ The URL hash stays in sync with the current slide, so links to specific slides a
 
 ## Tech stack
 
-| Layer | Technology |
-| --- | --- |
-| Framework | [SvelteKit](https://kit.svelte.dev) 2 + [Svelte](https://svelte.dev) 5 |
-| Deployment | `@sveltejs/adapter-static` |
-| Build tool | Vite 6 |
-| Language | TypeScript |
-| Design system | Terminal Noir (Monokai-inspired dark theme, defined in `src/app.css`) |
-| Formatting | Prettier + `prettier-plugin-svelte` |
-
----
-
-## Code style
-
-Formatting is handled by Prettier. Run it before committing:
-
-```bash
-npm run format
-```
-
-Type-check the project with:
-
-```bash
-npm run check
-```
-
-Commit messages follow a symbol-prefix convention (see `CLAUDE.md` for the full table). Examples:
-
-```
-+ new slide component
-! fix hash sync on initial load
-~ tweak slide transition timing
-```
+| Layer         | Technology                                                             |
+| ------------- | ---------------------------------------------------------------------- |
+| Framework     | [SvelteKit](https://kit.svelte.dev) 2 + [Svelte](https://svelte.dev) 5 |
+| Deployment    | `@sveltejs/adapter-static`                                             |
+| Build tool    | Vite 6                                                                 |
+| Language      | TypeScript                                                             |
+| Design system | Terminal Noir (Monokai-inspired dark theme, defined in `src/app.css`)  |
+| Formatting    | Prettier + `prettier-plugin-svelte`                                    |

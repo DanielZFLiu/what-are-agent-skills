@@ -1,6 +1,13 @@
-<script>
+<script lang="ts">
 	import SectionTag from '$lib/components/SectionTag.svelte';
 	import VideoPlayer from '$lib/components/VideoPlayer.svelte';
+
+	const steps = [
+		{ num: '1', cmd: 'mkdir my-skill/', label: "Create a folder in your tool's skills directory" },
+		{ num: '2', cmd: 'Write SKILL.md', label: 'Add name, description, and instructions' },
+		{ num: '3', cmd: 'scripts/ references/ assets/', label: 'Bundle resources (optional)' },
+		{ num: '4', cmd: '/my-skill', label: 'Invoke it and watch it work' },
+	];
 </script>
 
 <div class="slide">
@@ -9,7 +16,7 @@
 
 	<div class="layout">
 		<div class="steps">
-			{#each [{ num: '1', cmd: 'mkdir my-skill/', label: "Create a folder in your tool's skills directory" }, { num: '2', cmd: 'Write SKILL.md', label: 'Add name, description, and instructions' }, { num: '3', cmd: 'scripts/ references/ assets/', label: 'Bundle resources (optional)' }, { num: '4', cmd: '/my-skill', label: 'Invoke it and watch it work' }] as step}
+			{#each steps as step}
 				<div class="step">
 					<div class="step-num font-mono">{step.num}</div>
 					<div class="step-content">
@@ -45,6 +52,8 @@
 		gap: 24px;
 		align-items: flex-start;
 	}
+
+	/* ── Step list ────────────────────────────────────────────── */
 
 	.steps {
 		flex: 1;
@@ -91,6 +100,8 @@
 		padding: 2px 6px;
 		border-radius: 3px;
 	}
+
+	/* ── Video panel ──────────────────────────────────────────── */
 
 	.video-side {
 		flex: 1.2;

@@ -8,7 +8,7 @@ In this tutorial, you'll create a skill that gives an agent the capability to ro
 
 ## Prerequisites
 
-* [VS Code](https://code.visualstudio.com/) with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+- [VS Code](https://code.visualstudio.com/) with [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
 
 > This tutorial uses VS Code, but Agent Skills are an open format. The same skill works in any compatible agent, including Claude Code and OpenAI Codex.
 
@@ -39,9 +39,9 @@ die, 20 for a d20).
 
 That's it — one file, under 20 lines. Here's what each part does:
 
-* **`name`** — A short identifier for the skill. Must match the folder name.
-* **`description`** — Tells the agent when to use this skill. This is how the agent decides whether to activate it.
-* **The body** — Instructions the agent follows when the skill activates. Here, the agent is instructed to generate a random number using a terminal command, substituting the number of sides from the user's request.
+- **`name`** — A short identifier for the skill. Must match the folder name.
+- **`description`** — Tells the agent when to use this skill. This is how the agent decides whether to activate it.
+- **The body** — Instructions the agent follows when the skill activates. Here, the agent is instructed to generate a random number using a terminal command, substituting the number of sides from the user's request.
 
 ## Try it out
 
@@ -69,7 +69,7 @@ This process uses **progressive disclosure** to let the agent access many skills
 
 ## Next steps
 
-* **[Best practices](best-practices.md)** — How to write skills that are well-scoped and effective.
-* **[Optimizing skill descriptions](optimizing-descriptions.md)** — Test and improve your skill's description so it activates on the right prompts.
-* **[Specification](specification.md)** — The complete format reference for `SKILL.md` files.
-* **[Example skills](https://github.com/anthropics/skills)** — Browse real-world skills on GitHub.
+- **[Best practices](best-practices.md)** — How to write skills that are well-scoped and effective.
+- **[Optimizing skill descriptions](optimizing-descriptions.md)** — Test and improve your skill's description so it activates on the right prompts.
+- **[Specification](specification.md)** — The complete format reference for `SKILL.md` files.
+- **[Example skills](https://github.com/anthropics/skills)** — Browse real-world skills on GitHub.
