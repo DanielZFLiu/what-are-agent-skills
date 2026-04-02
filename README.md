@@ -41,8 +41,6 @@ The project uses `@sveltejs/adapter-static` with `fallback: 'index.html'`, so it
 <VideoPlayer src="/recordings/your-recording.mp4" />
 ```
 
-When `src` is empty the component renders a placeholder — the recording slot is intentionally left blank so the file can be dropped in without touching any other code.
-
 ---
 
 ## Navigation
@@ -55,16 +53,3 @@ When `src` is empty the component renders a placeholder — the recording slot i
 | URL hash (e.g. `#3`)       | Jump directly to a slide |
 
 The URL hash stays in sync with the current slide, so links to specific slides and browser back/forward navigation both work.
-
----
-
-## Tech stack
-
-| Layer         | Technology                                                             |
-| ------------- | ---------------------------------------------------------------------- |
-| Framework     | [SvelteKit](https://kit.svelte.dev) 2 + [Svelte](https://svelte.dev) 5 |
-| Deployment    | `@sveltejs/adapter-static`                                             |
-| Build tool    | Vite 6                                                                 |
-| Language      | TypeScript                                                             |
-| Design system | Terminal Noir (Monokai-inspired dark theme, defined in `src/app.css`)  |
-| Formatting    | Prettier + `prettier-plugin-svelte`                                    |
