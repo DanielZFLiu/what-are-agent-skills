@@ -28,7 +28,7 @@
 		</div>
 
 		<div class="video-side">
-			<VideoPlayer src="" />
+			<VideoPlayer src="/recordings/create-skill.mp4" />
 			<p class="hint font-mono">Screen recording of creating a skill</p>
 		</div>
 	</div>
